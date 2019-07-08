@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
+using System.Reflection;
 using System.Threading;
 
 namespace dnSpy_update_checker {
@@ -16,7 +17,7 @@ namespace dnSpy_update_checker {
 
         public ExtensionInfo ExtensionInfo => new ExtensionInfo() {
             ShortDescription = "Ability to check for updates on github.",
-            Copyright = "Copyright 2019 DeStilleGast"
+            Copyright = "Copyright 2019 DeStilleGast (except on Newtonsoft.Json.dll that is included)"
         };
 
         public IEnumerable<string> MergedResourceDictionaries {
@@ -51,6 +52,17 @@ namespace dnSpy_update_checker {
                         }));
                     }
                 }).Start();
+            } else if (@event == ExtensionEvent.Loaded) {
+                AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+            }
+
+        }
+
+        private Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args) {
+            using (var stream = GetType().Assembly.GetManifestResourceStream("dnSpy_update_checker.lib.Newtonsoft.Json.dll")) {
+                var assemblyData = new byte[stream.Length];
+                stream.Read(assemblyData, 0, assemblyData.Length);
+                return Assembly.Load(assemblyData);
             }
         }
     }
