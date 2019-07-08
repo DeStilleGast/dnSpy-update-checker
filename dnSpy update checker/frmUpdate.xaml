@@ -1,0 +1,29 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:img="clr-namespace:dnSpy.Contracts.Images;assembly=dnSpy.Contracts.DnSpy"
+             xmlns:ui="clr-namespace:dnSpy.Contracts.Controls.ToolWindows;assembly=dnSpy.Contracts.DnSpy"
+             xmlns:mvvm="clr-namespace:dnSpy.Contracts.MVVM;assembly=dnSpy.Contracts.DnSpy"
+             xmlns:local="clr-namespace:dnSpy_update_checker"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" 
+             x:Class="dnSpy_update_checker.frmUpdate"
+             MinHeight="260.537" MinWidth="571.419" d:DesignHeight="261.337" d:DesignWidth="583.419">
+    <Grid Margin="0,0,0,-0.4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="btnGo" Content="Update selected" Margin="400,231,10.2,-26.2" Click="btnGo_Click" Height="20" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbUpdateItems" Margin="10,10,10.2,-0.4"
+                 ItemsSource="{Binding Items}"
+                 SelectionMode="Multiple">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ListBoxItem>
+                        <CheckBox Name="cbUpdateThis" Content="{Binding Value}" IsChecked="{Binding IsChecked}"/>
+                    </ListBoxItem>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
