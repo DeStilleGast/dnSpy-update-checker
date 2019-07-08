@@ -16,3 +16,6 @@ While you are browsing my code, you may notices some dialog code, I was planning
 - Copy "dnSpy update checker.x.dll" to your dnSpy folder location (or a subfolder named "Extensions" and place the dll in there)
 - (re)start dnSpy
 - enjoy/wait for update
+
+# External library used:
+Newtonsoft json (embedded): https://github.com/JamesNK/Newtonsoft.Json/
