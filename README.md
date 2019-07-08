@@ -1,9 +1,6 @@
 # Preview
 ![Update dialog](https://github.com/DeStilleGast/dnSpy-update-checker/raw/master/img/img1.png)
 
-# Warning, dotnet core is currently unsupported!
-(any help is welcome)
-
 While you are browsing my code, you may notices some dialog code, I was planning to support other extensions to check for updates, but I was not in the mood to do that now.
 
 # How to build
