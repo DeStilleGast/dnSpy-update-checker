@@ -1,4 +1,4 @@
-# preview
+# Preview
 ![Update dialog](https://github.com/DeStilleGast/dnSpy-update-checker/raw/master/img/img1.png)
 
 # Warning, dotnet core is currently unsupported!
