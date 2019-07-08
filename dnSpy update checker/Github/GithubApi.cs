@@ -4,7 +4,7 @@ using System.Web.Script.Serialization;
 
 namespace dnSpy_update_checker.Github {
     class GithubApi {
-        
+
         public GithubApiResult GetResult(string author, string repo) {
             var Url = $"https://api.github.com/repos/{author}/{repo}/releases";
 
@@ -23,7 +23,4 @@ namespace dnSpy_update_checker.Github {
             return serializer.Deserialize<IList<GithubApiResult>>(json)[0];
         }
     }
-
-
-    
 }

@@ -5,15 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
 
-namespace dnSpy_update_checker
-{
+namespace dnSpy_update_checker {
     [ExportExtension]
     public class ExtensionLoader : IExtension {
 
